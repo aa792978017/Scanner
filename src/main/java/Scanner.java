@@ -48,9 +48,10 @@ public class Scanner {
         }else {
             scanAllPort(ips,portStart,portEnd);
         }
+        // 扫描任务都完成后，程序停止
         try{
             while(true){
-                if(poolExecutor.isTerminated()){
+                if(poolExecutor.getActiveCount() == 0){
                     logger.info("[-] Scan job all finish");
                     System.exit(-1);
                     break;

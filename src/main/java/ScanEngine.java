@@ -45,6 +45,7 @@ public class ScanEngine {
             object.setBanner(serviceBanner);
             object.setService();
             logger.info("[-] Find service :"+ object);
+            socket.close();
         } catch (ConnectException e) {
             // 打印连接失败的端口
 //            logger.info("[-] Close: " + object.getIp() + ":" + object.getPort());
